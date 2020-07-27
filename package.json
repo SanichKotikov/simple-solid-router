@@ -1,0 +1,46 @@
+{
+  "name": "simple-solid-router",
+  "version": "1.0.0",
+  "description": "Simple router for solid-js",
+  "main": "lib/index.js",
+  "module": "lib/index.js",
+  "sideEffects": false,
+  "scripts": {
+    "build": "babel src --extensions '.ts','.tsx' --out-dir lib && tsc --outDir lib"
+  },
+  "babel": {
+    "presets": ["@babel/preset-typescript", "solid"]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SanichKotikov/simple-solid-router.git"
+  },
+  "author": "Sanich Kotikov <sancho@cdrpro.ru> (https://sanichkotikov.github.io)",
+  "license": "MIT",
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "solid-js",
+    "router",
+    "route",
+    "routing",
+    "history",
+    "link"
+  ],
+  "bugs": {
+    "url": "https://github.com/SanichKotikov/simple-solid-router/issues"
+  },
+  "peerDependencies": {
+    "solid-js": "0.18.x"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.10.5",
+    "@babel/core": "7.10.5",
+    "@babel/preset-typescript": "7.10.4",
+    "babel-preset-solid": "0.18.14",
+    "solid-js": "0.18.x",
+    "typescript": "3.9.7"
+  },
+  "homepage": "https://github.com/SanichKotikov/simple-solid-router"
+}
