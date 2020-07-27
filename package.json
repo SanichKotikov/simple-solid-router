@@ -6,7 +6,8 @@
   "module": "lib/index.js",
   "sideEffects": false,
   "scripts": {
-    "build": "babel src --extensions '.ts','.tsx' --out-dir lib && tsc --outDir lib"
+    "build": "babel src --extensions '.ts','.tsx' --out-dir lib && tsc --outDir lib",
+    "size": "npm run build && size-limit"
   },
   "babel": {
     "presets": [
@@ -18,6 +19,11 @@
       "@babel/plugin-proposal-object-rest-spread"
     ]
   },
+  "size-limit": [
+    {
+      "path": "lib/index.js"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SanichKotikov/simple-solid-router.git"
@@ -47,7 +53,9 @@
     "@babel/plugin-proposal-object-rest-spread": "7.10.4",
     "@babel/plugin-proposal-optional-chaining": "7.10.4",
     "@babel/preset-typescript": "7.10.4",
+    "@size-limit/preset-small-lib": "4.5.5",
     "babel-preset-solid": "0.18.x",
+    "size-limit": "4.5.5",
     "solid-js": "0.18.x",
     "typescript": "3.9.7"
   },
