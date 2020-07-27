@@ -3,7 +3,7 @@ import { Dynamic, Show } from 'solid-js/dom';
 import { useRouter } from './Provider';
 
 export interface IRouteMatch<T = string[]> {
-  routeMatch?: T;
+  routeMatch: T;
 }
 
 interface IProps {
@@ -18,7 +18,7 @@ export function Route({ pattern, component }: IProps) {
     <Show when={pattern.test(history.location)}>
       <Dynamic
         component={component}
-        routeMatch={history.location.match(pattern)?.slice(1)}
+        routeMatch={(history.location.match(pattern) || []).slice(1)}
       />
     </Show>
   );

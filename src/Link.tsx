@@ -1,13 +1,18 @@
 import { IRouteHistory, useRouter } from './Provider';
 
-interface IProps<S = any> extends Omit<JSX.AnchorHTMLAttributes<HTMLAnchorElement>, 'href'> {
+interface IProps<S = any> {
   to: string | IRouteHistory<S>;
+  class?: string;
   classActive?: string;
+  children: JSX.Element;
 }
 
-export function Link<S = any>({ to, classList, classActive = '', children, ...rest }: IProps<S>) {
+export function Link<S = any>(props: IProps<S>) {
   const { history, navigate } = useRouter();
-  const [href, state] = typeof to === 'string' ? [to] : [to.location, to.state];
+
+  const [href, state] = typeof props.to === 'string'
+    ? [props.to]
+    : [props.to.location, props.to.state];
 
   function onClick(event: Event) {
     event.preventDefault();
@@ -16,12 +21,12 @@ export function Link<S = any>({ to, classList, classActive = '', children, ...re
 
   return (
     <a
-      {...rest}
       href={href}
-      classList={{ ...classList, [classActive]: history.location === href }}
+      class={props.class}
+      classList={{ [props.classActive || '']: history.location === href }}
       onClick={onClick}
     >
-      {children}
+      {props.children}
     </a>
   );
 }

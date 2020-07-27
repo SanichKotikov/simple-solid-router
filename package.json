@@ -1,6 +1,6 @@
 {
   "name": "simple-solid-router",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple router for solid-js",
   "main": "lib/index.js",
   "module": "lib/index.js",
@@ -13,10 +13,6 @@
     "presets": [
       "@babel/preset-typescript",
       "solid"
-    ],
-    "plugins": [
-      "@babel/plugin-proposal-optional-chaining",
-      "@babel/plugin-proposal-object-rest-spread"
     ]
   },
   "size-limit": [
@@ -50,8 +46,6 @@
   "devDependencies": {
     "@babel/cli": "7.10.5",
     "@babel/core": "7.10.5",
-    "@babel/plugin-proposal-object-rest-spread": "7.10.4",
-    "@babel/plugin-proposal-optional-chaining": "7.10.4",
     "@babel/preset-typescript": "7.10.4",
     "@size-limit/preset-small-lib": "4.5.5",
     "babel-preset-solid": "0.18.x",
