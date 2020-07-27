@@ -9,7 +9,14 @@
     "build": "babel src --extensions '.ts','.tsx' --out-dir lib && tsc --outDir lib"
   },
   "babel": {
-    "presets": ["@babel/preset-typescript", "solid"]
+    "presets": [
+      "@babel/preset-typescript",
+      "solid"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-optional-chaining",
+      "@babel/plugin-proposal-object-rest-spread"
+    ]
   },
   "repository": {
     "type": "git",
@@ -37,8 +44,10 @@
   "devDependencies": {
     "@babel/cli": "7.10.5",
     "@babel/core": "7.10.5",
+    "@babel/plugin-proposal-object-rest-spread": "7.10.4",
+    "@babel/plugin-proposal-optional-chaining": "7.10.4",
     "@babel/preset-typescript": "7.10.4",
-    "babel-preset-solid": "0.18.14",
+    "babel-preset-solid": "0.18.x",
     "solid-js": "0.18.x",
     "typescript": "3.9.7"
   },

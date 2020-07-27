@@ -23,7 +23,7 @@ export function RouterProvider(props: IProps) {
   };
 
   const [history, setHistory] = createState<IRouteHistory>({
-    location: location.pathname,
+    location: window.location.pathname,
     state: window.history.state,
   });
 
